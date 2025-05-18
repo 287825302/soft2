@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxs.ditu.mapper.YbBiaodanMapper">
+    
+    <resultMap type="YbBiaodan" id="YbBiaodanResult">
+        <result property="id"    column="id"    />
+        <result property="zuobiao"    column="zuobiao"    />
+        <result property="leibie"    column="leibie"    />
+        <result property="zrenshu"    column="zrenshu"    />
+        <result property="fuzeren"    column="fuzeren"    />
+        <result property="hzhiyuan"    column="hzhiyuan"    />
+        <result property="zzhiyuan"    column="zzhiyuan"    />
+        <result property="status"    column="status"    />
+        <result property="createdtime"    column="createdtime"    />
+        <result property="userId"    column="user_id"    />
+        <result property="nickName"    column="nick_name"    />
+        <result property="kz1"    column="kz1"    />
+        <result property="kz2"    column="kz2"    />
+        <result property="kz3"    column="kz3"    />
+    </resultMap>
+
+    <sql id="selectYbBiaodanVo">
+        select id, zuobiao, leibie, zrenshu, fuzeren, hzhiyuan, zzhiyuan, status, createdtime, user_id, nick_name, kz1, kz2, kz3 from yb_biaodan
+    </sql>
+
+    <select id="selectYbBiaodanList" parameterType="YbBiaodan" resultMap="YbBiaodanResult">
+        <include refid="selectYbBiaodanVo"/>
+        <where>  
+            <if test="zuobiao != null  and zuobiao != ''"> and zuobiao = #{zuobiao}</if>
+            <if test="leibie != null  and leibie != ''"> and leibie = #{leibie}</if>
+            <if test="zrenshu != null  and zrenshu != ''"> and zrenshu = #{zrenshu}</if>
+            <if test="fuzeren != null  and fuzeren != ''"> and fuzeren = #{fuzeren}</if>
+            <if test="hzhiyuan != null  and hzhiyuan != ''"> and hzhiyuan = #{hzhiyuan}</if>
+            <if test="zzhiyuan != null  and zzhiyuan != ''"> and zzhiyuan = #{zzhiyuan}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+        </where>
+    </select>
+    
+    <select id="selectYbBiaodanById" parameterType="Long" resultMap="YbBiaodanResult">
+        <include refid="selectYbBiaodanVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertYbBiaodan" parameterType="YbBiaodan" useGeneratedKeys="true" keyProperty="id">
+        insert into yb_biaodan
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="zuobiao != null">zuobiao,</if>
+            <if test="leibie != null">leibie,</if>
+            <if test="zrenshu != null">zrenshu,</if>
+            <if test="fuzeren != null">fuzeren,</if>
+            <if test="hzhiyuan != null">hzhiyuan,</if>
+            <if test="zzhiyuan != null">zzhiyuan,</if>
+            <if test="status != null">status,</if>
+            <if test="createdtime != null">createdtime,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="nickName != null">nick_name,</if>
+            <if test="kz1 != null">kz1,</if>
+            <if test="kz2 != null">kz2,</if>
+            <if test="kz3 != null">kz3,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="zuobiao != null">#{zuobiao},</if>
+            <if test="leibie != null">#{leibie},</if>
+            <if test="zrenshu != null">#{zrenshu},</if>
+            <if test="fuzeren != null">#{fuzeren},</if>
+            <if test="hzhiyuan != null">#{hzhiyuan},</if>
+            <if test="zzhiyuan != null">#{zzhiyuan},</if>
+            <if test="status != null">#{status},</if>
+            <if test="createdtime != null">#{createdtime},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="nickName != null">#{nickName},</if>
+            <if test="kz1 != null">#{kz1},</if>
+            <if test="kz2 != null">#{kz2},</if>
+            <if test="kz3 != null">#{kz3},</if>
+         </trim>
+    </insert>
+
+    <update id="updateYbBiaodan" parameterType="YbBiaodan">
+        update yb_biaodan
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="zuobiao != null">zuobiao = #{zuobiao},</if>
+            <if test="leibie != null">leibie = #{leibie},</if>
+            <if test="zrenshu != null">zrenshu = #{zrenshu},</if>
+            <if test="fuzeren != null">fuzeren = #{fuzeren},</if>
+            <if test="hzhiyuan != null">hzhiyuan = #{hzhiyuan},</if>
+            <if test="zzhiyuan != null">zzhiyuan = #{zzhiyuan},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="createdtime != null">createdtime = #{createdtime},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="nickName != null">nick_name = #{nickName},</if>
+            <if test="kz1 != null">kz1 = #{kz1},</if>
+            <if test="kz2 != null">kz2 = #{kz2},</if>
+            <if test="kz3 != null">kz3 = #{kz3},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteYbBiaodanById" parameterType="Long">
+        delete from yb_biaodan where id = #{id}
+    </delete>
+
+    <delete id="deleteYbBiaodanByIds" parameterType="String">
+        delete from yb_biaodan where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
