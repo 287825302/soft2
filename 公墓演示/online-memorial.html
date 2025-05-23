@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线祭扫 - 三亚市红尔山公墓</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 通用样式 -->
+    <link rel="stylesheet" href="online-memorial.css"> <!-- 在线祭扫页面特定样式 -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://i.ibb.co/D9QvtZW/cemetery-logo.png" alt="三亚市红尔山公墓" class="logo">
+                <div class="logo-text">
+                    <h1>三亚市红尔山公墓</h1>
+                    <p class="management">三亚市民政局 主管单位</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="about.html">走进红尔山</a></li>
+                    <li><a href="#">业务办理</a></li>
+                    <li><a href="online-memorial.html" class="active">在线祭扫</a></li>
+                    <li><a href="#">新闻公告</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> 登录</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" action="dashboard.html">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i> 用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> 密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">记住我</label>
+                    </div>
+                    <a href="#" class="forgot-password">忘记密码?</a>
+                </div>
+                <button type="submit" class="login-submit">登录</button>
+                <div class="register-link">
+                    <p>还没有账号? <a href="#">立即注册</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section class="page-banner memorial-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>在线祭扫</h1>
+            <p>跨越时空，寄托哀思，让爱与怀念永存</p>
+        </div>
+    </section>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li class="active">在线祭扫</li>
+            </ul>
+        </div>
+    </section>
+
+    <main class="memorial-main-content">
+        <div class="container memorial-container">
+            <!-- 左侧：逝者信息与祭扫场景 -->
+            <aside class="memorial-sidebar">
+                <div class="deceased-info card-style">
+                    <h3>祭奠对象</h3>
+                    <div id="deceasedSelector">
+                        <img src="https://i.ibb.co/YZnGJkS/deceased-photo.jpg" alt="逝者照片" id="deceasedPhoto">
+                        <h4 id="deceasedName">先考 李明 府君</h4>
+                        <p id="deceasedDates">生于 1950年1月1日</p>
+                        <p id="deceasedDatesTo">卒于 2020年12月31日</p>
+                        <button id="changeDeceasedBtn" class="btn-small">更换祭奠对象</button>
+                    </div>
+                </div>
+
+                <div class="scene-settings card-style">
+                    <h3>场景与音乐</h3>
+                    <div class="form-group">
+                        <label for="sceneSelector">选择场景：</label>
+                        <select id="sceneSelector" class="form-control">
+                            <option value="scene1">宁静山水</option>
+                            <option value="scene2">肃穆陵园</option>
+                            <option value="scene3">温馨回忆</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="musicSelector">背景音乐：</label>
+                        <select id="musicSelector" class="form-control">
+                            <option value="none">无音乐</option>
+                            <option value="music1">思念曲</option>
+                            <option value="music2">往日时光</option>
+                        </select>
+                        <audio id="backgroundMusic" loop></audio>
+                        <button id="playMusicBtn" class="btn-small"><i class="fas fa-play"></i> 播放</button>
+                    </div>
+                </div>
+
+                <div class="memorial-actions card-style">
+                    <h3>祭扫操作</h3>
+                    <button class="action-btn" data-action="incense"><i class="fas fa-burn"></i> 上香</button>
+                    <button class="action-btn" data-action="candle"><i class="fas fa-lightbulb"></i> 点烛</button>
+                    <button class="action-btn" data-action="flower"><i class="fas fa-fan"></i> 献花 (虚拟)</button>
+                     <button class="action-btn" data-action="wine"><i class="fas fa-wine-glass"></i> 敬酒 (虚拟)</button>
+                </div>
+            </aside>
+
+            <!-- 中间：祭台区域 -->
+            <section class="memorial-altar-area" id="memorialAltar">
+                <!-- 祭台背景由JS根据场景选择器更改 -->
+                <div class="altar-table">
+                    <div id="incenseBurner" class="altar-item"><img src="https://i.ibb.co/tJyJRQs/incense-burner.png" alt="香炉"></div>
+                    <div id="candleHolderLeft" class="altar-item candle-holder"><img src="https://i.ibb.co/1qpJYkr/candle-holder.png" alt="左烛台"></div>
+                    <div id="candleHolderRight" class="altar-item candle-holder"><img src="https://i.ibb.co/1qpJYkr/candle-holder.png" alt="右烛台"></div>
+                    <div id="flowerVase" class="altar-item"><img src="https://i.ibb.co/xSgcgwL/flower-vase.png" alt="花瓶"></div>
+                    <div id="wineCup" class="altar-item"><img src="https://i.ibb.co/ZJgVkzL/wine-cup.png" alt="酒杯"></div>
+                    <div id="fruitPlate" class="altar-item offering-spot">祭品区1</div>
+                    <div id="pastryPlate" class="altar-item offering-spot">祭品区2</div>
+                    <div id="moneyBurner" class="altar-item offering-spot">元宝/纸钱</div>
+                </div>
+                <div class="animation-effects">
+                    <!-- 用于显示上香、点烛等动画效果 -->
+                </div>
+            </section>
+
+            <!-- 右侧：虚拟物品/服务商店与购物车 -->
+            <aside class="memorial-shop-cart">
+                <div class="shop-tabs">
+                    <button class="tab-btn active" data-tab="items">虚拟祭品</button>
+                    <button class="tab-btn" data-tab="services">特色服务</button>
+                    <button class="tab-btn" data-tab="cart"><i class="fas fa-shopping-cart"></i> 购物车 <span id="cartCount">(0)</span></button>
+                </div>
+
+                <div id="shopItems" class="shop-panel active card-style">
+                    <h4><i class="fas fa-store"></i> 虚拟祭品商店</h4>
+                    <div class="item-category">
+                        <h5><i class="fas fa-fan"></i> 精选鲜花</h5>
+                        <div class="shop-item" data-id="flower001" data-name="白菊花束" data-price="10">
+                            <img src="https://i.ibb.co/SxCQW3G/white-chrysanthemum.jpg" alt="白菊花束">
+                            <span>白菊花束 ¥10</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                        <div class="shop-item" data-id="flower002" data-name="黄菊花束" data-price="12">
+                            <img src="https://i.ibb.co/YhB0Jz4/yellow-chrysanthemum.jpg" alt="黄菊花束">
+                            <span>黄菊花束 ¥12</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                         <div class="shop-item" data-id="flower003" data-name="康乃馨" data-price="15">
+                            <img src="https://i.ibb.co/HNdyYL5/carnation.jpg" alt="康乃馨">
+                            <span>康乃馨 ¥15</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                    </div>
+                    <div class="item-category">
+                        <h5><i class="fas fa-burn"></i> 香烛冥纸</h5>
+                         <div class="shop-item" data-id="incense001" data-name="高档檀香" data-price="8">
+                            <img src="https://i.ibb.co/7jdvZKL/incense-sticks.jpg" alt="高档檀香">
+                            <span>高档檀香 ¥8</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                        <div class="shop-item" data-id="candle001" data-name="龙凤对烛" data-price="18">
+                            <img src="https://i.ibb.co/k9Lq4yG/dragon-phoenix-candles.jpg" alt="龙凤对烛">
+                            <span>龙凤对烛 ¥18</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                        <div class="shop-item" data-id="money001" data-name="元宝一袋" data-price="20">
+                            <img src="https://i.ibb.co/zxCRz5f/joss-paper.jpg" alt="元宝">
+                            <span>元宝一袋 ¥20</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                    </div>
+                    <div class="item-category">
+                        <h5><i class="fas fa-apple-alt"></i> 时令鲜果</h5>
+                        <div class="shop-item" data-id="fruit001" data-name="苹果组合" data-price="25">
+                            <img src="https://i.ibb.co/Jn5LVKW/apples.jpg" alt="苹果">
+                            <span>苹果组合 ¥25</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                         <div class="shop-item" data-id="fruit002" data-name="香蕉组合" data-price="18">
+                            <img src="https://i.ibb.co/Qp1Xtcz/bananas.jpg" alt="香蕉">
+                            <span>香蕉组合 ¥18</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                    </div>
+                     <div class="item-category">
+                        <h5><i class="fas fa-wine-bottle"></i> 醇香酒水</h5>
+                        <div class="shop-item" data-id="wine001" data-name="精品白酒" data-price="30">
+                            <img src="https://i.ibb.co/TYvkjMQ/baijiu.jpg" alt="白酒">
+                            <span>精品白酒 ¥30</span>
+                            <button class="add-to-cart-btn">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="shopServices" class="shop-panel card-style">
+                    <h4><i class="fas fa-concierge-bell"></i> 特色服务项目</h4>
+                    <div class="service-item" data-id="service001" data-name="代献鲜花(标准)" data-price="50">
+                        <img src="https://i.ibb.co/Jkj7FLG/flower-service.jpg" alt="代献鲜花">
+                        <div class="service-desc">
+                            <span>代献鲜花(标准) ¥50</span>
+                            <p>专人代您敬献一束标准鲜花。</p>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                    <div class="service-item" data-id="service002" data-name="代献鲜花(豪华)" data-price="98">
+                        <img src="https://i.ibb.co/LhNzBZr/flower-service-deluxe.jpg" alt="代献鲜花豪华">
+                         <div class="service-desc">
+                            <span>代献鲜花(豪华) ¥98</span>
+                            <p>专人代您敬献一束豪华鲜花。</p>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                    <div class="service-item" data-id="service003" data-name="墓地清洁(基础)" data-price="88">
+                        <img src="https://i.ibb.co/8XnLLCW/grave-cleaning.jpg" alt="墓地清洁">
+                        <div class="service-desc">
+                            <span>墓地清洁(基础) ¥88</span>
+                            <p>专业人员进行墓碑及周边基础清洁。</p>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                    <div class="service-item" data-id="service004" data-name="墓地清洁(深度)" data-price="158">
+                        <img src="https://i.ibb.co/TBdCvQP/grave-cleaning-deep.jpg" alt="墓地深度清洁">
+                         <div class="service-desc">
+                            <span>墓地清洁(深度) ¥158</span>
+                            <p>专业人员进行墓碑及周边深度清洁和养护。</p>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                     <div class="service-item" data-id="service005" data-name="祈福诵经(电子)" data-price="66">
+                        <img src="https://i.ibb.co/6gLkC5N/prayer-service.jpg" alt="祈福诵经">
+                         <div class="service-desc">
+                            <span>祈福诵经(电子) ¥66</span>
+                            <p>为您选择的逝者播放一段祈福经文。</p>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                </div>
+
+                <div id="cartView" class="shop-panel card-style">
+                    <h4><i class="fas fa-shopping-cart"></i> 我的购物车</h4>
+                    <div id="cartItemsContainer">
+                        <p class="empty-cart-message">购物车是空的，快去选购祭品吧！</p>
+                        <!-- Cart items will be dynamically added here -->
+                    </div>
+                    <div class="cart-summary">
+                        <p>商品总数: <span id="cartTotalItems">0</span></p>
+                        <p>合计: ¥<span id="cartTotalPrice">0.00</span></p>
+                        <button id="checkoutBtn" class="btn-primary" disabled>去结算</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 留言板 -->
+        <section class="guestbook-section container">
+            <div class="card-style">
+                <h3><i class="fas fa-comments"></i> 留言寄思</h3>
+                <div id="guestbookMessages">
+                    <!-- Messages will be added here -->
+                    <p class="empty-message">暂无留言，说点什么吧...</p>
+                </div>
+                <div class="guestbook-form">
+                    <textarea id="guestbookTextarea" placeholder="在此输入您的思念与祝福..."></textarea>
+                    <input type="text" id="guestbookUser" placeholder="您的称呼 (可选)">
+                    <button id="submitMessageBtn" class="btn-primary">发表留言</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 订单确认与支付模态框 -->
+        <div id="checkoutModal" class="modal">
+            <div class="modal-content checkout-modal-content">
+                <span class="close" id="closeCheckoutModalBtn">&times;</span>
+                <h2>订单确认与支付</h2>
+                <div id="orderDetails">
+                    <h4>订单详情</h4>
+                    <ul id="checkoutItemList"></ul>
+                    <p class="checkout-total">订单总金额: ¥<span id="checkoutOrderTotal">0.00</span></p>
+                </div>
+                <div class="agreement-section">
+                    <h4>服务协议</h4>
+                    <div id="agreementText" class="agreement-text-area">
+                        <p><strong>在线祭扫服务协议</strong></p>
+                        <p>欢迎使用三亚市红尔山公墓在线祭扫服务。本协议是您与三亚市红尔山公墓（以下简称"本公墓"）之间关于使用本在线祭扫平台（以下简称"本平台"）所提供服务的协议。</p>
+                        <p><strong>1. 服务内容</strong></p>
+                        <p>1.1 本平台提供虚拟祭扫物品购买、特色服务（如代献鲜花、墓地清洁等）购买及在线留言等服务。</p>
+                        <p>1.2 所有虚拟物品仅为在线祭扫仪式中的虚拟道具，不具有实际物品价值。特色服务将由本公墓工作人员根据服务描述执行。</p>
+                        <p><strong>2. 用户行为规范</strong></p>
+                        <p>2.1 用户应遵守中华人民共和国相关法律法规，不得利用本平台进行任何违法违规活动。</p>
+                        <p>2.2 用户在留言区发表的言论应文明、健康，不得包含任何侮辱、诽谤、迷信、暴力等不良信息。</p>
+                        <p><strong>3. 购买与支付</strong></p>
+                        <p>3.1 用户购买虚拟物品或特色服务前，请仔细确认商品/服务信息及价格。</p>
+                        <p>3.2 本平台目前仅提供模拟支付流程，不涉及真实货币交易。所有支付行为均为演示目的。</p>
+                        <p>3.3 特色服务（如墓地清洁）将在模拟支付成功后，由本公墓按约定（演示为固定提示）进行处理。</p>
+                        <p><strong>4. 知识产权</strong></p>
+                        <p>4.1 本平台所有内容，包括但不限于文字、图片、音频、视频、界面设计等，其知识产权归本公墓所有。</p>
+                        <p><strong>5. 免责声明</strong></p>
+                        <p>5.1 本平台致力于提供稳定服务，但不对因不可抗力或第三方原因造成的服务中断或数据丢失承担责任。</p>
+                        <p>5.2 用户因违反本协议规定而引起的任何法律责任由用户自行承担。</p>
+                        <p><strong>6. 协议的修改与终止</strong></p>
+                        <p>6.1 本公墓有权根据需要不时地制订、修改本协议，并通过平台公告等方式通知用户。修改后的协议一旦公布即有效替代原来的协议。</p>
+                        <p>6.2 如用户不同意相关变更，应立即停止使用本平台服务。</p>
+                        <p><strong>7. 隐私保护</strong></p>
+                        <p>7.1 本公墓尊重并保护用户个人隐私信息。具体请参照《三亚市红尔山公墓隐私政策》（此处为占位）。</p>
+                        <p><strong>8. 其他</strong></p>
+                        <p>8.1 本协议的最终解释权归三亚市红尔山公墓所有。</p>
+                        <p>请仔细阅读并理解本协议所有条款。如果您对本协议的任何条款表示异议，请不要进行后续操作。</p>
+                    </div>
+                    <div class="form-group agreement-checkbox">
+                        <input type="checkbox" id="agreeToTerms">
+                        <label for="agreeToTerms">我已阅读并同意上述《在线祭扫服务协议》</label>
+                    </div>
+                </div>
+                <div class="payment-section">
+                    <h4>选择支付方式</h4>
+                    <div class="payment-options">
+                        <label><input type="radio" name="paymentMethod" value="alipay" checked> <i class="fab fa-alipay"></i> 支付宝</label>
+                        <label><input type="radio" name="paymentMethod" value="wechat"> <i class="fab fa-weixin"></i> 微信支付</label>
+                    </div>
+                    <button id="confirmPaymentBtn" class="btn-primary" disabled>确认支付</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模拟支付二维码模态框 -->
+        <div id="paymentQRModal" class="modal">
+            <div class="modal-content payment-qr-modal-content">
+                <span class="close" id="closePaymentQRModalBtn">&times;</span>
+                <h3 id="paymentQRTitle">扫码支付</h3>
+                <img id="paymentQRCodeImg" src="https://i.ibb.co/wYVVgBZ/qr-code-placeholder.png" alt="支付二维码">
+                <p id="paymentQRInstruction">请使用您选择的支付方式扫码完成支付。</p>
+                <div class="payment-qr-actions">
+                    <button id="paymentSuccessfulBtn" class="btn-primary">我已完成支付</button>
+                    <button id="cancelPaymentBtn" class="btn-secondary">取消支付</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://i.ibb.co/D9QvtZW/cemetery-logo.png" alt="三亚市红尔山公墓" class="logo">
+                    <div>
+                        <h3>三亚市红尔山公墓</h3>
+                        <p>三亚市民政局 主管单位</p>
+                    </div>
+                </div>
+                <div class="footer-subscribe">
+                    <h3>订阅我们的通讯</h3>
+                    <p>获取最新园区动态和政策信息</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="请输入您的邮箱" required>
+                        <button type="submit">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-nav-column">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">园区简介</a></li>
+                        <li><a href="#">发展历史</a></li>
+                        <li><a href="#">荣誉资质</a></li>
+                        <li><a href="#">管理团队</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>服务指南</h4>
+                    <ul>
+                        <li><a href="#">业务办理</a></li>
+                        <li><a href="#">墓型介绍</a></li>
+                        <li><a href="#">价格标准</a></li>
+                        <li><a href="#">在线祭扫</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">办理流程</a></li>
+                        <li><a href="#">交通指南</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#" title="抖音"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="QQ"><i class="fab fa-qq"></i></a>
+                    </div>
+                    <div class="qrcode">
+                        <img src="https://i.ibb.co/mSMznLp/wechat-qr.png" alt="微信公众号" class="qr-image">
+                        <p>扫码关注公众号</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> 地址：海南省三亚市吉阳区红尔山路88号</p>
+                <p><i class="fas fa-phone"></i> 总机电话：0898-88XXXXXX</p>
+                <p><i class="fas fa-headset"></i> 监督电话：0898-12340</p>
+                <p><i class="fas fa-envelope"></i> 电子邮箱：contact@heershan.gov.cn</p>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 三亚市红尔山公墓. All Rights Reserved. 琼ICP备XXXXXXXX号</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">网站地图</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- 通用脚本 -->
+    <script src="online-memorial.js"></script> <!-- 在线祭扫页面特定脚本 -->
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生命文化苑 - 三亚市红尔山公墓</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="life-culture.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/120x60?text=红尔山公墓" alt="三亚市红尔山公墓" class="logo">
+                <div class="logo-text">
+                    <h1>三亚市红尔山公墓</h1>
+                    <p class="management">三亚市民政局 主管单位</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="about.html">走进红尔山</a></li>
+                    <li><a href="life-culture.html" class="active">生命文化苑</a></li>
+                    <li><a href="#">业务办理</a></li>
+                    <li><a href="#">在线祭扫</a></li>
+                    <li><a href="#">新闻公告</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> 登录</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" action="dashboard.html">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i> 用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> 密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">记住我</label>
+                    </div>
+                    <a href="#" class="forgot-password">忘记密码?</a>
+                </div>
+                <button type="submit" class="login-submit">登录</button>
+                <div class="register-link">
+                    <p>还没有账号? <a href="#">立即注册</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section class="page-banner culture-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>生命文化苑</h1>
+            <p>感悟生命真谛，传承中华丧葬礼俗，探索殡葬改革新风尚。</p>
+        </div>
+    </section>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li class="active">生命文化苑</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="culture-intro">
+        <div class="container">
+            <div class="section-header">
+                <h2>文化传承 · 生命礼赞</h2>
+                <p>探索中华丧葬文化的深邃内涵，感悟生命的意义与价值</p>
+                <div class="decorative-line">
+                    <span class="line-icon"><i class="fas fa-seedling"></i></span>
+                </div>
+            </div>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>生命文化苑是红尔山公墓的文化传承与教育基地，致力于弘扬中华优秀丧葬文化，探索现代殡葬改革之路，引导公众理性看待生死，珍视当下生活。</p>
+                    <p>在这里，您可以了解中华丧葬礼俗的历史变迁，感受传统祭祀文化的人文关怀，探索现代殡葬改革的创新实践，参与生命教育的深度思考。</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="生命文化苑全景">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-culture-cards">
+        <div class="container">
+            <div class="culture-cards">
+                <div class="culture-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1571513721963-d855fd8286ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="中华丧葬文化">
+                        <div class="image-overlay"></div>
+                        <div class="card-badge">
+                            <span>传统</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2>中华丧葬源流</h2>
+                        <p>从远古信仰到礼制形成，从厚葬之风到人文纪念，探寻千年中华丧葬文化的历史脉络与核心理念。</p>
+                        <a href="funeral-culture.html" class="btn-explore">探索千年智慧 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="culture-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="公墓改革">
+                        <div class="image-overlay"></div>
+                        <div class="card-badge">
+                            <span>改革</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2>公墓改革之路</h2>
+                        <p>了解中国公墓体制改革的背景、意义与政策导向，以及民政部门与海南在推动绿色、文明、惠民殡葬方面的努力与成就。</p>
+                        <a href="cemetery-reform.html" class="btn-explore">见证时代变革 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="culture-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="生命教育">
+                        <div class="image-overlay"></div>
+                        <div class="card-badge">
+                            <span>教育</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2>生命教育与缅怀</h2>
+                        <p>探讨生命的意义，学习如何面对失落与悲伤，以积极的方式缅怀逝者，珍视当下美好生活。</p>
+                        <a href="life-education.html" class="btn-explore">感悟生命温度 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-quote">
+        <div class="container">
+            <div class="quote-content">
+                <i class="fas fa-quote-left"></i>
+                <blockquote>
+                    慎终追远，民德归厚；礼敬生命，文明向善。
+                </blockquote>
+                <p class="quote-author">— 中华丧葬文化核心理念</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-features">
+        <div class="container">
+            <div class="section-header">
+                <h2>文化特色展示</h2>
+                <p>多维度展现中华丧葬文化的丰富内涵与时代价值</p>
+                <div class="decorative-line">
+                    <span class="line-icon"><i class="fas fa-book-open"></i></span>
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>历史演变</h3>
+                        <p>从原始社会的随葬习俗，到儒家"厚葬薄祭"的反思，再到现代绿色殡葬的兴起，见证丧葬文化的历史嬗变。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-praying"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>礼仪传承</h3>
+                        <p>探索中国传统丧葬礼仪的文化内涵与精神价值，理解其中蕴含的"慎终追远"与"孝道"精神。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>绿色殡葬</h3>
+                        <p>了解海葬、树葬、花葬等现代绿色殡葬方式，探索人与自然和谐共生的生命终结方式。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>情感疗愈</h3>
+                        <p>提供丧亲之痛的心理疏导与情感疗愈方法，帮助人们健康面对生离死别。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-gallery">
+        <div class="container">
+            <div class="section-header light">
+                <h2>文化影像馆</h2>
+                <p>通过影像记录，感受中华丧葬文化的历史沉淀与时代脉动</p>
+                <div class="decorative-line">
+                    <span class="line-icon"><i class="fas fa-camera"></i></span>
+                </div>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item large">
+                    <img src="https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1625&q=80" alt="传统祭祀文化">
+                    <div class="gallery-caption">
+                        <h3>传统祭祀文化</h3>
+                        <p>清明节祭祀活动</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="自然葬礼">
+                    <div class="gallery-caption">
+                        <h3>自然葬礼</h3>
+                        <p>绿色殡葬新方式</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="生命教育课堂">
+                    <div class="gallery-caption">
+                        <h3>生命教育课堂</h3>
+                        <p>青少年生命教育活动</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="文物展示">
+                    <div class="gallery-caption">
+                        <h3>文物展示</h3>
+                        <p>古代丧葬文物展</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="现代纪念方式">
+                    <div class="gallery-caption">
+                        <h3>现代纪念方式</h3>
+                        <p>数字化纪念创新</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-cta">
+                <a href="#" class="btn-gallery">浏览更多图片 <i class="fas fa-images"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-events">
+        <div class="container">
+            <div class="section-header">
+                <h2>文化活动日历</h2>
+                <p>参与丰富多彩的文化活动，感受生命的意义与价值</p>
+                <div class="decorative-line">
+                    <span class="line-icon"><i class="fas fa-calendar-alt"></i></span>
+                </div>
+            </div>
+            <div class="events-timeline">
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="month">4月</span>
+                        <span class="day">4-6日</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>清明文化节</h3>
+                        <p class="event-meta"><i class="fas fa-map-marker-alt"></i> 红尔山公墓 - 文化广场</p>
+                        <p>传统祭祀展示、诗文朗诵、民俗表演，传承清明文化，弘扬慎终追远的传统美德。</p>
+                        <a href="#" class="event-link">了解详情 <i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="month">5月</span>
+                        <span class="day">15日</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>生命教育公开课</h3>
+                        <p class="event-meta"><i class="fas fa-map-marker-alt"></i> 红尔山公墓 - 文化讲堂</p>
+                        <p>邀请心理学专家主讲"如何面对失去"，帮助参与者理解生死，学会面对悲伤与失落。</p>
+                        <a href="#" class="event-link">了解详情 <i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="month">7月</span>
+                        <span class="day">1-31日</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>中华丧葬文物展</h3>
+                        <p class="event-meta"><i class="fas fa-map-marker-alt"></i> 红尔山公墓 - 文化展厅</p>
+                        <p>展出从先秦到近代的丧葬文物复制品，系统展示中华丧葬文化的历史演变与地域特色。</p>
+                        <a href="#" class="event-link">了解详情 <i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="month">9月</span>
+                        <span class="day">9日</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>重阳敬老活动</h3>
+                        <p class="event-meta"><i class="fas fa-map-marker-alt"></i> 红尔山公墓 - 松柏园</p>
+                        <p>组织老年人参观园区，举办健康讲座，开展"生命故事"分享会，弘扬尊老敬老传统。</p>
+                        <a href="#" class="event-link">了解详情 <i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="events-calendar-link">
+                <a href="#" class="btn-calendar">查看完整活动日历 <i class="fas fa-calendar-week"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>文化资源库</h2>
+                <p>丰富的学习资源，助您深入了解生命文化</p>
+                <div class="decorative-line">
+                    <span class="line-icon"><i class="fas fa-book"></i></span>
+                </div>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>电子书籍</h3>
+                        <p>《中国丧葬文化简史》《生死的智慧》《现代殡葬改革研究》等电子书籍免费下载。</p>
+                        <a href="#" class="resource-link">浏览书籍 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>视频讲座</h3>
+                        <p>专家学者关于生命教育、丧葬文化、心理疗愈等主题的视频讲座。</p>
+                        <a href="#" class="resource-link">观看视频 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones-alt"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>音频导览</h3>
+                        <p>红尔山文化苑各展区的专业解说音频，随时随地聆听学习。</p>
+                        <a href="#" class="resource-link">收听导览 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>教育课程</h3>
+                        <p>面向不同年龄段的生命教育课程，包含课件、教案和互动材料。</p>
+                        <a href="#" class="resource-link">探索课程 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-testimonials">
+        <div class="container">
+            <div class="section-header light">
+                <h2>参观者感言</h2>
+                <p>聆听他们在生命文化苑的感悟与收获</p>
+                <div class="decorative-line">
+                    <span class="line-icon"><i class="fas fa-comment-dots"></i></span>
+                </div>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"参观生命文化苑让我对中国传统丧葬文化有了全新的认识。原来，我们的祖先早已将生死智慧融入文化传统，教会我们如何尊重生命、面对离别。"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="李女士">
+                            <div class="author-info">
+                                <h4>李女士</h4>
+                                <p>大学教师，58岁</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"作为一名心理咨询师，我在这里找到了许多关于哀伤辅导的宝贵资源。生命文化苑不仅是一个展示传统的场所，更是一个帮助人们疗愈心灵的平台。"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="王先生">
+                            <div class="author-info">
+                                <h4>王先生</h4>
+                                <p>心理咨询师，42岁</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"带孩子来参加生命教育课程是我做过的最有意义的事情之一。通过这里的活动，孩子学会了珍惜生命，理解'感恩'的真正含义。"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="张女士">
+                            <div class="author-info">
+                                <h4>张女士</h4>
+                                <p>家长，35岁</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>想了解更多关于生命文化的内容？</h2>
+                <p>欢迎预约参观生命文化苑，我们的专业讲解员将为您提供深度导览</p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-primary"><i class="fas fa-calendar-alt"></i> 预约参观</a>
+                    <a href="#" class="cta-secondary"><i class="fas fa-phone"></i> 联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://via.placeholder.com/120x60?text=红尔山公墓" alt="三亚市红尔山公墓" class="logo">
+                    <div>
+                        <h3>三亚市红尔山公墓</h3>
+                        <p>三亚市民政局 主管单位</p>
+                    </div>
+                </div>
+                <div class="footer-subscribe">
+                    <h3>订阅我们的通讯</h3>
+                    <p>获取最新园区动态和政策信息</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="请输入您的邮箱" required>
+                        <button type="submit">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-nav-column">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">园区简介</a></li>
+                        <li><a href="#">发展历史</a></li>
+                        <li><a href="#">荣誉资质</a></li>
+                        <li><a href="#">管理团队</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>服务指南</h4>
+                    <ul>
+                        <li><a href="#">业务办理</a></li>
+                        <li><a href="#">墓型介绍</a></li>
+                        <li><a href="#">价格标准</a></li>
+                        <li><a href="#">在线祭扫</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">办理流程</a></li>
+                        <li><a href="#">交通指南</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#" title="抖音"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="QQ"><i class="fab fa-qq"></i></a>
+                    </div>
+                    <div class="qrcode">
+                        <img src="https://via.placeholder.com/120x120?text=微信公众号" alt="微信公众号" class="qr-image">
+                        <p>扫码关注公众号</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> 地址：海南省三亚市吉阳区红尔山路88号</p>
+                <p><i class="fas fa-phone"></i> 总机电话：0898-88XXXXXX</p>
+                <p><i class="fas fa-headset"></i> 监督电话：0898-12340</p>
+                <p><i class="fas fa-envelope"></i> 电子邮箱：contact@heershan.gov.cn</p>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 三亚市红尔山公墓. All Rights Reserved. 琼ICP备XXXXXXXX号</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">网站地图</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="life-culture.js"></script>
+</body>
+</html>

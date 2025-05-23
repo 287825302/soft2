@@ -1,0 +1,597 @@
+/* 走进红尔山页面特定样式 */
+
+/* 页面顶部Banner */
+.page-banner {
+    position: relative;
+    height: 450px; /* 增加高度以更好展示 */
+    margin-top: 80px; /* 确保在header下方，具体值可能需要根据header实际高度调整 */
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1535463731090-e34f4b5098c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex; /* For centering content */
+    align-items: center; /* For centering content */
+    justify-content: center; /* For centering content */
+    text-align: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(26, 58, 112, 0.75) 0%, rgba(26, 58, 112, 0.45) 100%);
+}
+
+.banner-content {
+    position: relative;
+    /* height: 100%; -- Removed, flex properties on parent handle this */
+    /* display: flex; -- Moved to parent */
+    flex-direction: column;
+    justify-content: center;
+    /* padding-left: 10%; -- Removed for centered text */
+    max-width: 800px;
+    color: var(--white);
+    z-index: 1;
+    padding: 0 var(--spacing-md); /* Add some horizontal padding */
+}
+
+.banner-content h1 {
+    font-size: 3.2rem; /* Slightly larger */
+    margin-bottom: var(--spacing-md); /* Increased spacing */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.banner-content p {
+    font-size: 1.3rem; /* Slightly larger */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.2s; /* Added delay */
+    animation-fill-mode: backwards; /* Ensures style is applied before animation starts */
+    max-width: 600px; /* Limit width of subtitle for better readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+    background-color: var(--offwhite);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+}
+
+.breadcrumb ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--gray-accent);
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '/';
+    margin: 0 var(--spacing-sm); /* Increased spacing */
+    color: var(--gray-accent);
+}
+
+.breadcrumb a {
+    color: var(--gray-accent);
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--blue-primary);
+    text-decoration: underline;
+}
+
+.breadcrumb .active {
+    color: var(--blue-primary);
+    font-weight: 600; /* Bolder active link */
+}
+
+/* 卡片网格布局 */
+.about-cards {
+    padding: var(--spacing-xl) 0; /* Increased top/bottom padding */
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* Min width adjustment */
+    gap: var(--spacing-lg);
+}
+
+.about-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards in a row have same height if content differs */
+}
+
+.about-card:hover {
+    transform: translateY(-8px); /* Increased hover effect */
+    box-shadow: var(--shadow-lg); /* Stronger shadow on hover */
+}
+
+.card-image {
+    height: 240px; /* Increased height */
+    overflow: hidden;
+    position: relative;
+    background-color: #f0f0f0; /* Placeholder background for images */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-card:hover .card-image img {
+    transform: scale(1.08); /* Increased scale effect */
+}
+
+.card-content {
+    padding: var(--spacing-md) var(--spacing-lg); /* More horizontal padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h2 {
+    color: var(--blue-primary);
+    font-size: 1.6rem; /* Slightly larger */
+    margin-bottom: var(--spacing-sm);
+}
+
+.card-content p {
+    color: var(--gray-accent);
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1; /* Pushes button to the bottom */
+    line-height: 1.7; /* Improved readability */
+}
+
+.card-button {
+    display: inline-flex;
+    align-items: center;
+    color: var(--blue-primary);
+    font-weight: 600;
+    padding: var(--spacing-xs) 0;
+    position: relative;
+    align-self: flex-start; /* Align button to the start of flex container */
+    transition: color 0.3s ease;
+    margin-top: auto; /* Pushes button to the bottom if p doesn't fill space */
+}
+
+.card-button i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card-button:hover {
+    color: var(--dark-blue);
+}
+
+.card-button:hover i {
+    transform: translateX(4px); /* Increased arrow movement */
+}
+
+.card-button::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Slightly lower underline */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold-accent); /* Use gold for underline */
+    transition: width 0.3s ease;
+}
+
+.card-button:hover::after {
+    width: 100%;
+}
+
+/* 3D全景卡片特殊样式 */
+.panoramic-preview {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 58, 112, 0.08); /* Slightly darker */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cube-container {
+    width: 100px; /* Adjusted size */
+    height: 100px;
+    perspective: 1000px; /* Increased perspective */
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg); /* Adjusted initial rotation */
+    animation: rotateCube 12s infinite linear; /* Renamed and adjusted duration */
+}
+
+.cube-face {
+    position: absolute;
+    width: 100px; /* Match container */
+    height: 100px; /* Match container */
+    opacity: 0.85;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Softer border */
+    background-size: cover;
+    background-position: center;
+}
+
+.cube-face.front  { transform: translateZ(50px); background-image: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60'); }
+.cube-face.back   { transform: rotateY(180deg) translateZ(50px); background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60'); }
+.cube-face.right  { transform: rotateY(90deg) translateZ(50px); background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60'); }
+.cube-face.left   { transform: rotateY(-90deg) translateZ(50px); background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60'); }
+.cube-face.top    { transform: rotateX(90deg) translateZ(50px); background-image: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60'); }
+.cube-face.bottom { transform: rotateX(-90deg) translateZ(50px); background-image: url('https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60'); }
+
+
+@keyframes rotateCube { /* Renamed animation */
+    0% {
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+}
+
+.panoramic-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--gold-accent); /* Use variable */
+    color: var(--dark-blue); /* Darker text for contrast */
+    padding: 6px 12px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 700; /* Bolder */
+    font-size: 0.85rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.panoramic-card .card-button {
+    color: var(--blue-primary); /* Match other buttons */
+}
+.panoramic-card .card-button:hover {
+    color: var(--dark-blue);
+}
+.panoramic-card .card-button::after {
+    background-color: var(--gold-accent);
+}
+.panoramic-card .card-button i {
+    color: var(--gold-accent); /* Gold icon for external link */
+}
+
+
+/* 园区风光卡片特殊样式 */
+.gallery-grid-preview { /* Renamed */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3px; /* Reduced gap */
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-grid-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.1); /* Slightly enhance colors */
+}
+
+/* 规划与设施卡片特殊样式 */
+.facility-icons {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    gap: 12px; /* Increased gap */
+}
+
+.facility-icon {
+    width: 44px; /* Slightly larger */
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.95); /* More opaque */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.facility-icon i {
+    color: var(--blue-primary);
+    font-size: 1.3rem; /* Slightly larger */
+}
+
+.facility-icon:hover {
+    transform: scale(1.1) translateY(-2px); /* Combined effect */
+    box-shadow: var(--shadow-md);
+    background-color: var(--white);
+}
+
+/* 简介部分样式 */
+.about-intro {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--offwhite);
+}
+
+.intro-content {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: var(--spacing-xl); /* Increased gap */
+}
+
+.intro-text {
+    flex: 1.2; /* Give text slightly more space */
+}
+
+.intro-text h2 {
+    color: var(--blue-primary);
+    font-size: 2.2rem; /* Slightly larger */
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.intro-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px; /* Longer underline */
+    height: 4px; /* Thicker underline */
+    background-color: var(--gold-accent);
+    border-radius: 2px;
+}
+.intro-text p {
+    line-height: 1.8; /* Improved readability */
+    font-size: 1.05rem; /* Slightly larger body text */
+    color: #555; /* Softer black */
+}
+
+.intro-features {
+    margin-top: var(--spacing-lg);
+}
+
+.intro-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-lg); /* Increased spacing */
+}
+
+.feature-icon {
+    width: 65px; /* Larger icon container */
+    height: 65px;
+    border-radius: 50%;
+    background-color: rgba(67, 176, 42, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-md);
+    flex-shrink: 0;
+    border: 2px solid rgba(67, 176, 42, 0.2); /* Subtle border */
+}
+
+.feature-icon i {
+    font-size: 2rem; /* Larger icon */
+    color: var(--green-primary); /* Use green primary */
+}
+
+.feature-text h3 {
+    color: var(--blue-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.2rem; /* Slightly larger */
+}
+
+.feature-text p {
+    color: var(--gray-accent);
+    margin-bottom: 0;
+    font-size: 0.95rem; /* Consistent with other p tags */
+    line-height: 1.6;
+}
+
+.intro-image-container { /* Added container */
+    flex: 0.8;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+.intro-image { /* Changed from .intro-image to .intro-image-container img or a class */
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.intro-image-container:hover .intro-image {
+    transform: scale(1.03);
+}
+
+/* 引用部分样式 */
+.about-quote {
+    padding: var(--spacing-xl) 0;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+    background-size: cover;
+    background-position: center 30%; /* Adjust vertical position */
+    background-attachment: fixed;
+    position: relative;
+    min-height: 400px; /* Ensure enough height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 36, 71, 0.88); /* Darker overlay */
+}
+
+.quote-content {
+    position: relative;
+    max-width: 850px; /* Wider */
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white);
+    padding: var(--spacing-md);
+}
+
+.quote-content > i.fa-quote-left { /* Target direct child */
+    font-size: 3.5rem; /* Larger quote icon */
+    color: var(--gold-accent);
+    opacity: 0.6; /* Slightly more visible */
+    margin-bottom: var(--spacing-md);
+    display: block; /* Ensure it's on its own line */
+}
+
+.quote-content blockquote {
+    font-size: 2rem; /* Larger quote text */
+    line-height: 1.6;
+    font-family: var(--font-title-cn), var(--font-title-en);
+    margin-bottom: var(--spacing-lg); /* More space */
+    font-weight: 400; /* Slightly bolder */
+    font-style: italic; /* Italicize quote */
+}
+
+.quote-author {
+    font-size: 1.15rem; /* Slightly larger */
+    color: var(--gold-accent);
+    font-weight: 600;
+}
+
+/* 滚动加载动画 */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .intro-content {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .intro-text,
+    .intro-image-container {
+        flex: none; /* Reset flex property */
+        width: 100%;
+    }
+    .intro-text {
+        order: 1; /* Ensure text comes before image if desired on mobile */
+    }
+    .intro-image-container {
+        order: 2;
+    }
+    
+    .quote-content blockquote {
+        font-size: 1.6rem;
+    }
+    .banner-content h1 {
+        font-size: 2.8rem;
+    }
+    .banner-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-banner {
+        height: 350px; /* Adjusted height */
+    }
+    
+    .banner-content h1 {
+        font-size: 2.2rem;
+    }
+    .banner-content p {
+        font-size: 1rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr; /* Single column for cards */
+    }
+    
+    .quote-content blockquote {
+        font-size: 1.4rem;
+    }
+    .intro-text h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-banner {
+        height: 300px;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.8rem;
+    }
+     .banner-content p {
+        font-size: 0.9rem;
+    }
+    
+    .intro-feature {
+        flex-direction: column;
+        text-align: center;
+        align-items: center; /* Center icon when stacked */
+    }
+    
+    .feature-icon {
+        margin-right: 0;
+        margin-bottom: var(--spacing-sm);
+    }
+    .breadcrumb ul {
+        justify-content: center; /* Center breadcrumbs on small screens */
+    }
+    .card-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Keyframes for animations (already present in your CSS, ensure it's included) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

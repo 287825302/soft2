@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户中心 - 三亚市红尔山公墓</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .dashboard-container {
+            padding-top: 120px;
+            min-height: 80vh;
+        }
+        
+        .dashboard-header {
+            background-color: var(--offwhite);
+            padding: var(--spacing-lg) 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .welcome-message {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .welcome-message h1 {
+            color: var(--blue-primary);
+        }
+        
+        .logout-btn {
+            padding: 8px 16px;
+            background-color: var(--white);
+            color: var(--blue-primary);
+            border: 1px solid var(--blue-primary);
+            border-radius: var(--border-radius-md);
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background-color: var(--blue-primary);
+            color: var(--white);
+        }
+        
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .dashboard-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .dashboard-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .dashboard-card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(67, 176, 42, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-sm);
+        }
+        
+        .dashboard-card-icon i {
+            font-size: 1.5rem;
+            color: var(--blue-primary);
+        }
+        
+        .dashboard-card h3 {
+            color: var(--blue-primary);
+            margin-bottom: 0;
+        }
+        
+        .dashboard-card-content {
+            color: var(--gray-accent);
+        }
+        
+        .dashboard-card-footer {
+            margin-top: var(--spacing-md);
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/120x60?text=红尔山公墓" alt="三亚市红尔山公墓" class="logo">
+                <div class="logo-text">
+                    <h1>三亚市红尔山公墓</h1>
+                    <p class="management">三亚市民政局 主管单位</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">走进红尔山</a></li>
+                    <li><a href="#">业务办理</a></li>
+                    <li><a href="#">在线祭扫</a></li>
+                    <li><a href="#">新闻公告</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 8px;">
+                    <span>张先生</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="dashboard-header">
+            <div class="container">
+                <div class="welcome-message">
+                    <h1>欢迎回来，张先生</h1>
+                    <a href="index.html" class="logout-btn">退出登录</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <div class="dashboard-card-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>我的祭扫记录</h3>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>您已完成 12 次线上祭扫</p>
+                        <p>上次祭扫时间: 2025-04-05</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="#" class="text-link">查看详情 →</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <div class="dashboard-card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>我的预约</h3>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>您有 1 个待确认的预约</p>
+                        <p>预约时间: 2025-05-25 10:00</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="#" class="text-link">管理预约 →</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <div class="dashboard-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>我的墓位</h3>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>墓位编号: A-1234</p>
+                        <p>位置: 松林区 3排 12号</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="#" class="text-link">查看详情 →</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <div class="dashboard-card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>我的文档</h3>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>您有 3 份文档</p>
+                        <p>最近更新: 2025-03-20</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="#" class="text-link">查看文档 →</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <div class="dashboard-card-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3>消息通知</h3>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>您有 2 条未读消息</p>
+                        <p>最新消息: 清明节活动安排通知</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="#" class="text-link">查看全部 →</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <div class="dashboard-card-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>账户设置</h3>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>管理您的个人信息和账户安全</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="#" class="text-link">前往设置 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://via.placeholder.com/120x60?text=红尔山公墓" alt="三亚市红尔山公墓" class="logo">
+                    <div>
+                        <h3>三亚市红尔山公墓</h3>
+                        <p>三亚市民政局 主管单位</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">服务指南</a></li>
+                    <li><a href="#">新闻公告</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">服务条款</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> 地址：海南省三亚市吉阳区红尔山路88号</p>
+                <p><i class="fas fa-phone"></i> 总机电话：0898-88XXXXXX</p>
+                <p><i class="fas fa-headset"></i> 监督电话：0898-12340</p>
+                <p><i class="fas fa-envelope"></i> 电子邮箱：contact@heershan.gov.cn</p>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 三亚市红尔山公墓. All Rights Reserved. 琼ICP备XXXXXXXX号</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">网站地图</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航栏滚动效果
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.backgroundColor = 'var(--white)';
+                    header.style.boxShadow = 'var(--shadow-sm)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

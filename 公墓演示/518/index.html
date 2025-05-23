@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>墓地规划图交互系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- 添加悬浮提示卡片 -->
+    <div class="toast-notification" id="toast">
+        <div class="icon">✓</div>
+        <div class="message"></div>
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <div class="container">
+        <div class="map-container">
+            <img src="map.jpg" alt="墓地规划图" id="cemetery-map">
+            <div class="overlay-area" data-area="A" data-village="haipo"></div>
+            <div class="overlay-area" data-area="A-1" data-village="haipo"></div>
+            <div class="overlay-area" data-area="A-2" data-village="haipo"></div>
+
+            <div class="overlay-area" data-area="B" data-village="yanglan"></div>
+            <div class="overlay-area" data-area="C" data-village="maling"></div>
+            <div class="overlay-area" data-area="C-1" data-village="maling"></div>
+
+            <div class="overlay-area" data-area="D" data-village="miaolin"></div>
+            <div class="overlay-area" data-area="E" data-village="none"></div>
+        </div>
+        <div class="results-panel">
+            <h2>选择结果</h2>
+            <div id="selected-area">请先选择您所在的村庄</div>
+            <div id="random-numbers"></div>
+        </div>
+    </div>
+
+    <!-- 村庄选择模态框 -->
+    <div id="village-modal" class="modal">
+        <div class="modal-content">
+            <h2>请选择您所在的村庄</h2>
+            <div class="village-content">
+                <div class="village-options">
+                    <button class="village-btn" data-village="haipo">海坡村</button>
+                    <button class="village-btn" data-village="yanglan">羊栏村</button>
+                    <button class="village-btn" data-village="maling">马岭村</button>
+                    <button class="village-btn" data-village="miaolin">妙林村</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加模态框 -->
+    <div id="agreement-modal" class="modal">
+        <div class="modal-content">
+            <h2>服务条款</h2>
+            <div class="terms-content">
+                <h3>重要提示：</h3>
+                <p>1. 本系统仅作为墓地位置随机选择的参考工具。</p>
+                <p>2. 最终选址需要实地确认并遵守相关法律法规。</p>
+                <p>3. 选择结果不构成最终确认，具体事宜请与工作人员协商。</p>
+                <p>4. 本系统的使用不代表对任何具体位置的承诺或保证。</p>
+                <p>5. 请遵守当地殡葬管理相关规定。</p>
+            </div>
+            <div class="agreement-checkbox">
+                <label>
+                    <input type="checkbox" id="agree-checkbox">
+                    我已阅读并同意以上条款
+                </label>
+            </div>
+            <div class="modal-buttons">
+                <button id="confirm-button" disabled>确认</button>
+                <button id="cancel-button">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 错误提示模态框 -->
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <h2>提示</h2>
+            <div class="error-content">
+                <p id="error-message"></p>
+            </div>
+            <div class="modal-buttons">
+                <button id="error-confirm-button">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 感谢弹窗 -->
+    <div id="thanks-modal" class="modal">
+        <div class="modal-content thanks-content">
+            <h2>感谢使用</h2>
+            <div class="thanks-message">
+                <p>感谢您使用墓地规划图交互系统</p>
+                <p>系统将在 <span id="countdown">30</span> 秒后自动重置</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

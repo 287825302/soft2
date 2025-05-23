@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三亚市红尔山公墓 - 生命如歌，思念永恒于山海之间</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/120x60?text=红尔山公墓" alt="三亚市红尔山公墓" class="logo">
+                <div class="logo-text">
+                    <h1>三亚市红尔山公墓</h1>
+                    <p class="management">三亚市民政局 主管单位</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="#">走进红尔山</a></li>
+                    <li><a href="#">业务办理</a></li>
+                    <li><a href="#">在线祭扫</a></li>
+                    <li><a href="#">新闻公告</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> 登录</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" action="dashboard.html">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i> 用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> 密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">记住我</label>
+                    </div>
+                    <a href="#" class="forgot-password">忘记密码?</a>
+                </div>
+                <button type="submit" class="login-submit">登录</button>
+                <div class="register-link">
+                    <p>还没有账号? <a href="#">立即注册</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="video-container">
+            <video autoplay muted loop id="hero-video" poster="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                <source src="https://player.vimeo.com/external/370467553.hd.mp4?s=ce49c8c6d8e28a89298ffb4c53a2e842bdb01df9&profile_id=175&oauth2_token_id=57447761" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+            <div class="video-controls">
+                <button id="play-pause-btn"><i class="fas fa-pause"></i></button>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>生命如歌，思念永恒于山海之间</h1>
+            <p>红尔山公墓，由三亚市民政局主管，我们以专业与虔诚，守护每一份生命的尊严与家族的传承。</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-primary">探索园区</a>
+                <a href="#" class="cta-secondary">服务咨询</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#services"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">核心服务</h2>
+            <p class="section-subtitle">我们提供专业、人性化的服务，为逝者家属提供全方位支持</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>园区概览</h3>
+                    <p>一览红尔山风貌，感受山海间的宁静</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3>业务办理</h3>
+                    <p>专业服务团队，简化办理流程</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>在线祭扫</h3>
+                    <p>足不出户，表达思念与追思</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>新闻公告</h3>
+                    <p>及时了解园区动态与政策信息</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>交通指南</h3>
+                    <p>多种交通方式，轻松抵达红尔山</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">关于红尔山</h2>
+            <p class="section-subtitle">生命的休憩港湾，思念的永恒家园</p>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80" alt="红尔山公墓风景">
+                </div>
+                <div class="about-text">
+                    <h2>红尔山：生命的休憩港湾，思念的永恒家园</h2>
+                    <p>红尔山公墓位于三亚市北郊，依山傍海，环境优美，是国家一级公墓。园区规划合理，融合自然与人文，为逝者提供一处宁静安详的归宿，为生者创造一个缅怀追思的空间。</p>
+                    <p>作为三亚市民政局直属单位，我们秉持"以人为本，服务至上"的理念，用心守护每一份思念，传承生命的价值与尊严。</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20</span>
+                            <span class="stat-label">年历史</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">300</span>
+                            <span class="stat-label">亩园区面积</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">大主题区</span>
+                        </div>
+                    </div>
+                    <a href="#" class="text-link">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2>我们的理念</h2>
+                <p class="quote">"生命的意义不在于长度，而在于深度；逝者的尊严，我们用心守护。"</p>
+                <div class="philosophy-grid">
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <h3>尊重生命</h3>
+                        <p>每一个生命都值得尊重，每一段故事都值得铭记。我们致力于为逝者创造一个有尊严的安息之所。</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>生态环保</h3>
+                        <p>推广绿色殡葬理念，通过生态安葬方式，实现人与自然的和谐共生，让生命以另一种形式延续。</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>人文关怀</h3>
+                        <p>理解逝者家属的情感需求，提供温情、专业的服务，让逝者安息，生者安心。</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>文化传承</h3>
+                        <p>尊重传统殡葬文化，融合现代文明理念，传承家族情感与文化记忆。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="container">
+            <h2 class="section-title">园区动态与公告</h2>
+            <p class="section-subtitle">了解最新政策信息与园区活动</p>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="清明节活动">
+                    </div>
+                    <div class="news-content">
+                        <h3>2025年清明节祭扫安排公告</h3>
+                        <p class="date">2025-03-15</p>
+                        <p>为确保清明期间祭扫活动安全有序进行，现将2025年清明节期间祭扫安排公告如下...</p>
+                        <a href="#" class="news-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1590402494587-44b71d7772f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="生态葬区">
+                    </div>
+                    <div class="news-content">
+                        <h3>红尔山新增生态葬区正式开放</h3>
+                        <p class="date">2025-02-28</p>
+                        <p>响应国家绿色殡葬政策，我园区新建生态葬区已完工并正式对外开放，提供树葬、花坛葬等多种形式...</p>
+                        <a href="#" class="news-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="智能系统">
+                    </div>
+                    <div class="news-content">
+                        <h3>智能追思系统上线，提供全新祭扫体验</h3>
+                        <p class="date">2025-01-10</p>
+                        <p>我园区智能追思系统正式上线，通过二维码可查看逝者生平事迹，上传照片、视频，实现线上祭扫...</p>
+                        <a href="#" class="news-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="more-link">
+                <a href="#" class="text-link">查看全部新闻 →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">特色服务，人文关怀</h2>
+            <p class="section-subtitle">我们用心提供专业服务，让每一次告别都充满尊严</p>
+            <div class="features-slider">
+                <div class="feature-card active"> <!-- JS 会控制哪个是 active -->
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="生态安葬">
+                    </div>
+                    <div class="feature-content">
+                        <h3>回归自然，生命永续</h3>
+                        <p>红尔山公墓积极推广生态安葬理念，提供树葬、花坛葬、草坪葬等多种环保安葬方式，让逝者与自然和谐共存，生命以另一种形式延续。</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> 树葬：在树下安葬，与自然共生</li>
+                            <li><i class="fas fa-check-circle"></i> 花坛葬：融入花园景观，象征生命轮回</li>
+                            <li><i class="fas fa-check-circle"></i> 草坪葬：简约庄重，节约土地资源</li>
+                        </ul>
+                        <a href="#" class="feature-link">了解详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="智能服务">
+                    </div>
+                    <div class="feature-content">
+                        <h3>智慧科技，便捷缅怀</h3>
+                        <p>我们推出AI助手"小安"和虚拟祭扫平台，通过现代科技手段，让思念不受时间和空间限制。足不出户，也能表达对逝者的追思与怀念。</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> 线上祭扫：随时随地表达思念</li>
+                            <li><i class="fas fa-check-circle"></i> 数字纪念馆：珍藏逝者生平记忆</li>
+                            <li><i class="fas fa-check-circle"></i> 智能导航：轻松找到墓位位置</li>
+                        </ul>
+                        <a href="#" class="feature-link">了解详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="一站式服务">
+                    </div>
+                    <div class="feature-content">
+                        <h3>一站式服务，全程无忧</h3>
+                        <p>我们提供从咨询、选址、设计到后期维护的全流程服务，专业团队全程陪伴，减轻家属负担，让您专注于对逝者的追思。</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> 专业咨询：根据需求提供合适方案</li>
+                            <li><i class="fas fa-check-circle"></i> 墓园设计：个性化设计，彰显逝者特色</li>
+                            <li><i class="fas fa-check-circle"></i> 长期维护：定期养护，确保环境整洁</li>
+                        </ul>
+                        <a href="#" class="feature-link">了解详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button id="prev-feature" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button id="next-feature" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">家属感言</h2>
+            <p class="section-subtitle">他们对我们服务的真实评价</p>
+            <div class="testimonial-slider">
+                <div class="testimonial-card active"> <!-- JS 会控制哪个是 active -->
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>在父亲离世后，红尔山公墓的工作人员给予了我们极大的帮助和支持。他们专业、耐心的服务让我们在悲痛中感受到了温暖。园区环境优美，每次来祭扫都能感受到宁静与尊严。</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="张女士">
+                            <div>
+                                <h4>张女士</h4>
+                                <p>逝者家属</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>选择红尔山是我们全家的共同决定，这里依山傍海，环境优美，最重要的是管理规范，服务周到。线上祭扫系统非常便捷，即使人在外地也能表达对母亲的思念。</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="李先生">
+                            <div>
+                                <h4>李先生</h4>
+                                <p>逝者家属</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>作为一个在外地工作的三亚人，我很感谢红尔山提供的智能祭扫服务。每逢清明节和重要节日，即使不能回家，也能通过线上方式祭奠祖父。园区的生态理念也与我们家族的环保观念相符。</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="王女士">
+                            <div>
+                                <h4>王女士</h4>
+                                <p>逝者家属</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls testimonial-controls">
+                <button id="prev-testimonial" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button id="next-testimonial" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">园区风光</h2>
+            <p class="section-subtitle">感受红尔山的四季之美</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="晨曦中的静谧小径">
+                    <p class="caption">晨曦中的静谧小径</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="雨后初晴的生命湖">
+                    <p class="caption">雨后初晴的生命湖</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="云海环绕的山顶景观">
+                    <p class="caption">云海环绕的山顶景观</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="四季花园">
+                    <p class="caption">四季花园</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="纪念广场夕照">
+                    <p class="caption">纪念广场夕照</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="山水间的宁静一角">
+                    <p class="caption">山水间的宁静一角</p>
+                </div>
+            </div>
+            <div class="more-link">
+                <a href="#" class="text-link">查看更多园区风光 →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <p class="section-subtitle">为您解答关于红尔山公墓的常见疑问</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何预约参观红尔山公墓？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>您可以通过以下方式预约参观：</p>
+                        <ol>
+                            <li>电话预约：拨打我们的服务热线 0898-88XXXXXX</li>
+                            <li>网上预约：在本网站"服务预约"页面填写表单</li>
+                            <li>微信预约：关注我们的公众号，点击"预约服务"</li>
+                        </ol>
+                        <p>建议提前1-2天预约，以便我们安排专人接待。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>红尔山公墓提供哪些类型的墓地？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们提供多种类型的墓地，包括：</p>
+                        <ul>
+                            <li>传统墓：包括单人墓、双人墓、家族墓等</li>
+                            <li>生态墓：树葬、花坛葬、草坪葬等环保安葬方式</li>
+                            <li>艺术墓：根据逝者生平定制的个性化纪念空间</li>
+                            <li>骨灰楼：室内骨灰安放单元</li>
+                        </ul>
+                        <p>不同类型墓地的价格和具体规格可咨询我们的客服人员。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>清明节期间有哪些特别安排？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>清明节是祭扫高峰期，我们会有以下特别安排：</p>
+                        <ul>
+                            <li>延长开放时间：清明节前后一周，园区开放时间延长至晚上6点</li>
+                            <li>增设接驳车：从市区多个点位提供免费接驳车服务</li>
+                            <li>文化活动：举办追思会、诗歌朗诵等纪念活动</li>
+                            <li>便民服务：设置临时服务点，提供祭扫用品、餐饮等服务</li>
+                        </ul>
+                        <p>具体安排会在清明节前一个月通过官网和公众号公布。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何使用在线祭扫系统？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>使用在线祭扫系统的步骤如下：</p>
+                        <ol>
+                            <li>注册/登录：使用手机号注册并登录系统</li>
+                            <li>绑定墓位：输入墓位编号或扫描墓碑上的二维码</li>
+                            <li>创建纪念馆：上传逝者照片、生平事迹等信息</li>
+                            <li>在线祭扫：选择虚拟祭品，写下思念寄语</li>
+                        </ol>
+                        <p>如需帮助，可拨打技术支持热线：0898-88XXXXX8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>需要更多信息或预约参观？</h2>
+                <p>我们的专业团队随时为您提供帮助，解答您的疑问</p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-primary"><i class="fas fa-phone"></i> 联系我们</a>
+                    <a href="#" class="cta-secondary"><i class="fas fa-calendar-alt"></i> 预约参观</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location">
+        <div class="container">
+            <h2 class="section-title">园区位置</h2>
+            <p class="section-subtitle">便捷的交通，宁静的环境</p>
+            <div class="location-container">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.9661029793!2d109.50973007596388!3d18.25899998253694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x315095f65a748d6b%3A0xf494894a4b6b299b!2z5LiJ5LqR5biC!5e0!3m2!1szh-CN!2scn!4v1621500908978!5m2!1szh-CN!2scn" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="location-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>地址</h3>
+                            <p>海南省三亚市吉阳区红尔山路88号</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-bus"></i>
+                        <div>
+                            <h3>公交路线</h3>
+                            <p>乘坐15路、28路、36路公交车至"红尔山公墓"站下车</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <h3>自驾路线</h3>
+                            <p>从市区沿海榆中线行驶约15分钟，见红尔山公墓指示牌右转</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>开放时间</h3>
+                            <p>全年开放：每日 8:00 - 17:30<br>清明节期间：每日 7:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://via.placeholder.com/120x60?text=红尔山公墓" alt="三亚市红尔山公墓" class="logo">
+                    <div>
+                        <h3>三亚市红尔山公墓</h3>
+                        <p>三亚市民政局 主管单位</p>
+                    </div>
+                </div>
+                <div class="footer-subscribe">
+                    <h3>订阅我们的通讯</h3>
+                    <p>获取最新园区动态和政策信息</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="请输入您的邮箱" required>
+                        <button type="submit">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-nav-column">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">园区简介</a></li>
+                        <li><a href="#">发展历史</a></li>
+                        <li><a href="#">荣誉资质</a></li>
+                        <li><a href="#">管理团队</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>服务指南</h4>
+                    <ul>
+                        <li><a href="#">业务办理</a></li>
+                        <li><a href="#">墓型介绍</a></li>
+                        <li><a href="#">价格标准</a></li>
+                        <li><a href="#">在线祭扫</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">办理流程</a></li>
+                        <li><a href="#">交通指南</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-column">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#" title="抖音"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="QQ"><i class="fab fa-qq"></i></a>
+                    </div>
+                    <div class="qrcode">
+                        <img src="https://via.placeholder.com/120x120?text=微信公众号" alt="微信公众号" class="qr-image">
+                        <p>扫码关注公众号</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> 地址：海南省三亚市吉阳区红尔山路88号</p>
+                <p><i class="fas fa-phone"></i> 总机电话：0898-88XXXXXX</p>
+                <p><i class="fas fa-headset"></i> 监督电话：0898-12340</p>
+                <p><i class="fas fa-envelope"></i> 电子邮箱：contact@heershan.gov.cn</p>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 三亚市红尔山公墓. All Rights Reserved. 琼ICP备XXXXXXXX号</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">网站地图</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
